@@ -1,6 +1,6 @@
 console.log("✅ app.js charger!");
-document.addEventListener("DOMContentLoaded", loadDocuments);
-let file=""
+/*document.addEventListener("DOMContentLoaded", loadDocuments);
+
 let documents = JSON.parse(localStorage.getItem("documents")) || [];
 console.log("document creer par let documents   "+JSON.stringify(documents));
 function loadDocuments() {
@@ -27,7 +27,7 @@ function addDocument() {
         return;
     }
 
-     file = fileInput.files[0];
+    let file = fileInput.files[0];
     console.log(" dans addDocument() file = fileInput.files[0]   "+JSON.stringify(file));
     let fileURL = "docs/" + file.name; // Stocke un vrai chemi
 
@@ -45,10 +45,10 @@ function deleteDocument(index) {
     localStorage.setItem("documents", JSON.stringify(documents));
     loadDocuments();
 }
-
+*/
 function openDocument(fileURL) {
     console.log(" file URL argument de openDocument  111111111 " + fileURL);
-    window.open(fileURL, "_parent");
+    window.open(fileURL, "_blank");
 }
 console.log("✅ La fonction openDocument est bien définie !");
 // Enregistrer le service worker
@@ -57,3 +57,52 @@ if ('serviceWorker' in navigator) {
         .then(() => console.log("Service Worker enregistré"))
         .catch(err => console.error("Erreur Service Worker:", err));
 }
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+    console.log("🌍 DOM chargé !");
+    await afficherListeFichiers(); // Charge la liste des fichiers en cache
+});
+
+async function afficherListeFichiers() {
+    const cache = await caches.open("mes-docs-admin-cache-v1");
+    const keys = await cache.keys();
+
+    // Création de la liste des fichiers
+    let fileList = document.getElementById("cachedFilesList");
+    if (!fileList) {
+        fileList = document.createElement("ul");
+        fileList.id = "cachedFilesList";
+        document.body.appendChild(fileList);
+    }
+    fileList.innerHTML = ""; // Nettoie la liste avant de la remplir
+
+    keys.forEach((request) => {
+        if (request.url.endsWith(".pdf")) {
+            const listItem = document.createElement("li");
+            const fileLink = document.createElement("a");
+            console.log("url        " +request.url)
+            fileLink.href = "#";
+            fileLink.textContent = `📄 ${request.url.split("/").pop()}`;
+            fileLink.dataset.url = request.url;
+
+            fileLink.addEventListener("click", async (e) => {
+                e.preventDefault();
+
+               // await afficherPDF(e.target.dataset.url, pdfViewer, cache);
+                openDocument(request.url);
+            });
+
+            listItem.appendChild(fileLink);
+            fileList.appendChild(listItem);
+        }
+    });
+
+    if (keys.length > 0) {
+        console.log("📂 Liste des fichiers affichée !");
+    } else {
+        console.log("⚠️ Aucun fichier PDF en cache.");
+    }
+}
+
+//

@@ -4,7 +4,15 @@ const FILES_TO_CACHE = [
     "/index.html",
     "/style.css",
     "/app.js",
-    "/manifest.json"
+    "/manifest.json",
+    "/docs/permis.pdf",
+    "/docs/cmr.pdf",
+    "/docs/livret.pdf",
+    "/docs/assurance.pdf",
+    "/docs/najat.pdf",
+    "/docs/houssine.pdf",
+    "/docs/mutuelle.pdf",
+    "/docs/cartebq.pdf",
 ];
 
 self.addEventListener("install", (event) => {
