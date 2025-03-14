@@ -5,6 +5,14 @@ const FILES_TO_CACHE = [
     "/mesdocs/style.css",
     "/mesdocs/app.js",
     "/mesdocs/manifest.json",
+    "/mesdocs/docs/permis.pdf",
+    "/mesdocs/docs/cmr.pdf",
+    "/mesdocs/docs/livret.pdf",
+    "/mesdocs/docs/assurance.pdf",
+    "/mesdocs/docs/najat.pdf",
+    "/mesdocs/docs/houssine.pdf",
+    "/mesdocs/docs/mutuelle.pdf",
+    "/mesdocs/docs/cartebq.pdf"
     
 ];
 
