@@ -11,7 +11,7 @@ const FILES_TO_CACHE = [
 
 self.addEventListener("install", event => {
     event.waitUntil(
-        caches.open("mon-cache").then(cache => {
+        caches.open("mes-docs-admin-cache-v1").then(cache => {
             console.log("📦 Ajout des fichiers au cache..kkkkkkkk.");
             return cache.addAll([
                 "/mesdocs/docs/permis.pdf",
