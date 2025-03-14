@@ -1,8 +1,8 @@
 {
     "name": "Mes Documents Administratifs",
     "short_name": "Docs Admin",
-    "start_url": "/index.html",
-    "id": "/index.html",
+    "start_url": "/mesdocs/index.html",
+    "id": "mesdocs/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
