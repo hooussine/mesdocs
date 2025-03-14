@@ -50,22 +50,22 @@ function openDocument(fileURL) {
     console.log(" file URL argument de openDocument  111111111 " + fileURL);
     window.open(fileURL, "_blank");
 }
-/*
+
 console.log("✅ La fonction openDocument est bien définie !");
 if ('serviceWorker' in navigator) { 
-    navigator.serviceWorker.register('mesdocs/sw.js', { scope: '/mesdocs/' })
+    navigator.serviceWorker.register('sw.js', { scope: '/mesdocs/' })
     .then(reg => console.log("✅ Service Worker enregistré avec le scope :", reg.scope))
     .catch(err => console.error("❌ Erreur d'enregistrement du SW :", err));
 }
 
-*/
+/*
 // Enregistrer le service worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('sw.js')
         .then(() => console.log("Service Worker enregistré"))
         .catch(err => console.error("Erreur Service Worker:", err));
 }
-
+*/
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("🌍 DOM chargé !");
     await afficherListeFichiers(); // Charge la liste des fichiers en cache
