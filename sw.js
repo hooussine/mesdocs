@@ -1,18 +1,18 @@
 const CACHE_NAME = "mes-docs-admin-cache-v1";
 const FILES_TO_CACHE = [
     "/",
-    "/mesdocs/index.html",
-    "/mesdocs/style.css",
-    "/mesdocs/app.js",
-    "/mesdocs/manifest.json",
-    "/mesdocs/docs/permis.pdf",
-    "/mesdocs/docs/cmr.pdf",
-    "/mesdocs/docs/livret.pdf",
-    "/mesdocs/docs/assurance.pdf",
-    "/mesdocs/docs/najat.pdf",
-    "/mesdocs/docs/houssine.pdf",
-    "/mesdocs/docs/mutuelle.pdf",
-    "/mesdocs/docs/cartebq.pdf",
+    "/index.html",
+    "/style.css",
+    "/app.js",
+    "/manifest.json",
+    "/docs/permis.pdf",
+    "/docs/cmr.pdf",
+    "/docs/livret.pdf",
+    "/docs/assurance.pdf",
+    "/docs/najat.pdf",
+    "/docs/houssine.pdf",
+    "/docs/mutuelle.pdf",
+    "/docs/cartebq.pdf",
 ];
 
 self.addEventListener("install", (event) => {
