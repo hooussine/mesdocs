@@ -52,7 +52,7 @@ function openDocument(fileURL) {
 }
 console.log("✅ La fonction openDocument est bien définie !");
 if ('serviceWorker' in navigator) { 
-    navigator.serviceWorker.register('/sw.js', { scope: '/mesdocs/' })
+    navigator.serviceWorker.register('sw.js', { scope: '/mesdocs/' })
     .then(reg => console.log("✅ Service Worker enregistré avec le scope :", reg.scope))
     .catch(err => console.error("❌ Erreur d'enregistrement du SW :", err));
 }
