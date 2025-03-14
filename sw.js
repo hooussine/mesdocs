@@ -1,10 +1,7 @@
 const CACHE_NAME = "mes-docs-admin-cache-v1";
 const FILES_TO_CACHE = [
-    "/",
-    "/mesdocs/index.html",
-    "/mesdocs/style.css",
-    "/mesdocs/app.js",
-    "/mesdocs/manifest.json",
+    "/mesdocs/",
+   
     
     
 ];
@@ -14,6 +11,11 @@ self.addEventListener("install", event => {
         caches.open("mes-docs-admin-cache-v1").then(cache => {
             console.log("📦 Ajout des fichiers au cache..kkkkkkkk.");
             return cache.addAll([
+                 "/mesdocs/index.html",
+    "/mesdocs/style.css",
+    "/mesdocs/app.js",
+    "/mesdocs/manifest.json",
+    "/mesdocs/icons/icon-512.png",
                 "/mesdocs/docs/permis.pdf",
                 "/mesdocs/docs/cmr.pdf",
                 "/mesdocs/docs/livret.pdf",
